@@ -80,7 +80,7 @@
   derivations or multi-step code problems where iterative critique genuinely improves the answer.
 
 ## groq
-
+```
  rmas/config.py
   - Added GroqModel str-enum with groq/ prefix values (LLAMA_8B ~560 t/s, LLAMA_70B ~280 t/s, GPT_OSS_20B ~1000 t/s)
   - Rewrote ROLE_MODELS with a hybrid strategy — the groq/ prefix is the routing signal:
@@ -105,7 +105,7 @@
   uv run main.py --model claude-sonnet-4-6              # all-Claude override
   uv run main.py --model groq/llama-3.3-70b-versatile  # all-Groq override
 
-
+```
   ## rmas_official_bridge/ — what was created
 
   A new package that imports the exact prompt builders from the cloned RecursiveMAS/prompts.py and runs the same five collaboration styles using either
