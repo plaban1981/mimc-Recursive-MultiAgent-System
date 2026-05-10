@@ -128,19 +128,21 @@
 ```
   CLI usage
 
-  # Add your Groq key to .env first
-  # GROQ_API_KEY=gsk_...
+  #### Add your Groq key to .env first
+  #### GROQ_API_KEY=gsk_...
 
-  # Groq provider — open-source models, closest to official HF checkpoints
+  #### Groq provider — open-source models, closest to official HF checkpoints
+  ```
   uv run rmas_official_bridge/main.py --style sequential_light --provider groq
   uv run rmas_official_bridge/main.py --style mixture          --provider groq --rounds 2
   uv run rmas_official_bridge/main.py --style distillation     --provider groq
   uv run rmas_official_bridge/main.py --style deliberation     --provider groq --stream
   uv run rmas_official_bridge/main.py --all                    --provider groq
-
-  # Anthropic provider (same as before)
+```
+  #### Anthropic provider (same as before)
+```
   uv run rmas_official_bridge/main.py --style sequential_scaled --provider anthropic
-
+```
   #### Groq model mapping (mirrors official checkpoints)
 ```
   ┌───────────────────────────────────┬───────────────────────────────────────┬──────────────────────────┐
