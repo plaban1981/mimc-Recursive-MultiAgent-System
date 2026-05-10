@@ -5,7 +5,7 @@
   - uv sync
 
 #### The packages it installs:
-
+```
   ┌─────────────────────────────────────────────────────┬──────────────────────────────────────────────┐
   │                       Package                       │                   Purpose                    │
   ├─────────────────────────────────────────────────────┼──────────────────────────────────────────────┤
@@ -27,7 +27,7 @@
   ├─────────────────────────────────────────────────────┼──────────────────────────────────────────────┤
   │ reportlab                                           │ PDF generation                               │
   └─────────────────────────────────────────────────────┴──────────────────────────────────────────────┘
-
+```
   After uv sync, also run:
   uv run playwright install
   That downloads the browser binaries Playwright needs (used in the deliberation pattern).
@@ -61,12 +61,12 @@
 ● --rounds controls how many times the full agent chain loops recursively before producing the final answer.
 
 #### For the sequential pattern with --rounds 3:
-
+```
   * Round 1:  Planner → Critic → Solver
   * Round 2:  Planner → Critic → Solver  (each agent sees Round 1 outputs in context)
   * Round 3:  Planner → Critic → Solver  (each agent sees Round 2 outputs in context)
               └── final_answer extracted here
-
+```
   Each round, agents receive the previous round's outputs via state["context"] and are instructed to refine rather than repeat. This simulates the paper's
   "RecursiveLink" — cross-agent latent state transfer.
 
@@ -112,7 +112,7 @@
   Claude (Anthropic) or Groq.
 
   File layout
-
+```
   rmas_official_bridge/
   ├── __init__.py          # adds RecursiveMAS/ to sys.path so prompts.py is importable
   ├── config.py            # Provider enum, model mapping for both Anthropic & Groq
@@ -125,7 +125,7 @@
       ├── mixture.py       # HIE_*_EXPERT_SLOT + HIE_FEEDBACK_SLOT (all 6 outer links)
       ├── distillation.py  # DISTILL_EXPERT_SLOT + DISTILL_FEEDBACK_SLOT (outer_el, outer_le)
       └── deliberation.py  # DELIBERATION_REFLECTOR_SLOT + DELIBERATION_FEEDBACK_SLOT
-
+```
   CLI usage
 
   # Add your Groq key to .env first
